@@ -3,7 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Multi-language Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f6f6;
+      color: #222;
+    }
+    #content {
+      max-width: 480px;
+      margin: 32px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+      padding: 24px 18px 28px 18px;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+      text-align: center;
+    }
     .lang { display: none; }
   </style>
 </head>
@@ -23,10 +51,7 @@
     </div>
   </div>
   <script>
-    // Получаем язык браузера
     const userLang = navigator.language || navigator.userLanguage;
-
-    // Показываем нужный раздел
     if (userLang.startsWith('ru')) {
       document.getElementById('lang-ru').style.display = 'block';
     } else if (userLang.startsWith('en')) {
