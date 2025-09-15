@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-language Example</title>
+  <style>
+    .lang { display: none; }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div class="lang" id="lang-en">
+      <h1>Hello!</h1>
+      <p>Welcome to our website.</p>
+    </div>
+    <div class="lang" id="lang-ru">
+      <h1>Привет!</h1>
+      <p>Добро пожаловать на наш сайт.</p>
+    </div>
+    <div class="lang" id="lang-default">
+      <h1>Language not supported</h1>
+      <p>Your language is not supported yet.</p>
+    </div>
+  </div>
+  <script>
+    // Получаем язык браузера
+    const userLang = navigator.language || navigator.userLanguage;
+
+    // Показываем нужный раздел
+    if (userLang.startsWith('ru')) {
+      document.getElementById('lang-ru').style.display = 'block';
+    } else if (userLang.startsWith('en')) {
+      document.getElementById('lang-en').style.display = 'block';
+    } else {
+      document.getElementById('lang-default').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
